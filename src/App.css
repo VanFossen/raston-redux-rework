@@ -1,0 +1,30 @@
+.App {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+
+  min-height: 100vh;
+}
+
+.Parameter {
+  margin: 20px;
+}
+
+/* parameter table */
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 25%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
