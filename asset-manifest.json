@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.d63b6a2d.css",
-    "main.js": "/static/js/main.9c66a132.js",
-    "index.html": "/index.html",
-    "main.d63b6a2d.css.map": "/static/css/main.d63b6a2d.css.map",
-    "main.9c66a132.js.map": "/static/js/main.9c66a132.js.map"
+    "main.css": "/raston-redux-rework/static/css/main.d63b6a2d.css",
+    "main.js": "/raston-redux-rework/static/js/main.9c66a132.js",
+    "index.html": "/raston-redux-rework/index.html",
+    "main.d63b6a2d.css.map": "/raston-redux-rework/static/css/main.d63b6a2d.css.map",
+    "main.9c66a132.js.map": "/raston-redux-rework/static/js/main.9c66a132.js.map"
   },
   "entrypoints": [
     "static/css/main.d63b6a2d.css",
