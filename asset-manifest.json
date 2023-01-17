@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/raston-redux-rework/static/css/main.d63b6a2d.css",
-    "main.js": "/raston-redux-rework/static/js/main.c09a8d54.js",
+    "main.css": "/raston-redux-rework/static/css/main.561316de.css",
+    "main.js": "/raston-redux-rework/static/js/main.d3aa0190.js",
     "index.html": "/raston-redux-rework/index.html",
-    "main.d63b6a2d.css.map": "/raston-redux-rework/static/css/main.d63b6a2d.css.map",
-    "main.c09a8d54.js.map": "/raston-redux-rework/static/js/main.c09a8d54.js.map"
+    "main.561316de.css.map": "/raston-redux-rework/static/css/main.561316de.css.map",
+    "main.d3aa0190.js.map": "/raston-redux-rework/static/js/main.d3aa0190.js.map"
   },
   "entrypoints": [
-    "static/css/main.d63b6a2d.css",
-    "static/js/main.c09a8d54.js"
+    "static/css/main.561316de.css",
+    "static/js/main.d3aa0190.js"
   ]
 }
