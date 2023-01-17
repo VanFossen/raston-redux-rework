@@ -8,6 +8,7 @@ import Pressure from "./components/Pressure";
 import Resolution from "./components/Resolution";
 import Scan from "./components/Scan";
 import Source from "./components/Source";
+import Spinner from "./components/Spinner";
 import Wavenumber from "./components/Wavenumber";
 import Window from "./components/Window";
 import ZeroFill from "./components/ZeroFill";
@@ -29,6 +30,8 @@ export default function App() {
     window,
     zeroFill,
   } = useSelector((store) => store.parameter);
+
+  const { progress } = useSelector((store) => store.progress);
 
   return (
     <div className="App">
@@ -72,60 +75,68 @@ export default function App() {
         <div className="Parameter">
           <Detector />
         </div>
+
+        <div className="Parameter">
+          <Spinner />
+        </div>
       </div>
 
-      <table>
-        <tbody>
-          <tr>
-            <th>Parameter</th>
-            <th>User Input</th>
-          </tr>
-          <tr>
-            <td>Wavenumber min</td>
-            <td>{waveMin}</td>
-          </tr>
-          <tr>
-            <td>Wavenumber min</td>
-            <td>{waveMax}</td>
-          </tr>
-          <tr>
-            <td>Pressure</td>
-            <td>{pressure}</td>
-          </tr>
-          <tr>
-            <td>Number of Scans</td>
-            <td>{scan}</td>
-          </tr>
-          <tr>
-            <td>Molecule</td>
-            <td>{molecule}</td>
-          </tr>
-          <tr>
-            <td>Resolution</td>
-            <td>{resolution}</td>
-          </tr>
-          <tr>
-            <td>Zero Fill</td>
-            <td>{zeroFill}</td>
-          </tr>
-          <tr>
-            <td>Source</td>
-            <td>{source}</td>
-          </tr>
-          <tr>
-            <td>Beamsplitter</td>
-            <td>{beamsplitter}</td>
-          </tr>
-          <tr>
-            <td>Cell Window</td>
-            <td>{window}</td>
-          </tr>
-          <tr>
-            <td>Detector</td>
-            <td> {detector}</td>
-          </tr>
-        </tbody>
-      </table>
+      {progress ? (
+        <div id="spinner" />
+      ) : (
+        <table>
+          <tbody>
+            <tr>
+              <th>Parameter</th>
+              <th>User Input</th>
+            </tr>
+            <tr>
+              <td>Wavenumber min</td>
+              <td>{waveMin}</td>
+            </tr>
+            <tr>
+              <td>Wavenumber min</td>
+              <td>{waveMax}</td>
+            </tr>
+            <tr>
+              <td>Pressure</td>
+              <td>{pressure}</td>
+            </tr>
+            <tr>
+              <td>Number of Scans</td>
+              <td>{scan}</td>
+            </tr>
+            <tr>
+              <td>Molecule</td>
+              <td>{molecule}</td>
+            </tr>
+            <tr>
+              <td>Resolution</td>
+              <td>{resolution}</td>
+            </tr>
+            <tr>
+              <td>Zero Fill</td>
+              <td>{zeroFill}</td>
+            </tr>
+            <tr>
+              <td>Source</td>
+              <td>{source}</td>
+            </tr>
+            <tr>
+              <td>Beamsplitter</td>
+              <td>{beamsplitter}</td>
+            </tr>
+            <tr>
+              <td>Cell Window</td>
+              <td>{window}</td>
+            </tr>
+            <tr>
+              <td>Detector</td>
+              <td> {detector}</td>
+            </tr>
+          </tbody>
+        </table>
+      )}
     </div>
   );
 }
