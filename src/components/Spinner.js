@@ -17,7 +17,6 @@ export default function Spinner() {
   const dispatch = useDispatch();
 
   const handleChange = (event, newAlignment) => {
-    console.log(newAlignment);
     newAlignment
       ? dispatch(activateProgress())
       : dispatch(deactivateProgress());
