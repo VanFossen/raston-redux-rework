@@ -8,7 +8,7 @@ import { CustomSwitch } from "./custom/CustomSwitch";
 
 // redux
 import { useDispatch } from "react-redux";
-import { updateWindow } from "../features/window/windowSlice";
+import { updateWindow } from "../features/parameter/parameterSlice";
 
 export default function Window() {
   const dispatch = useDispatch();

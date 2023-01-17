@@ -14,18 +14,21 @@ import ZeroFill from "./components/ZeroFill";
 
 import { useSelector } from "react-redux";
 
-// https://www.youtube.com/watch?v=bbkBuqC1rU4
+// redux-toolkit tutorial used: https://www.youtube.com/watch?v=bbkBuqC1rU4
 export default function App() {
-  const { beamsplitter } = useSelector((store) => store.beamsplitter);
-  const { detector } = useSelector((store) => store.detector);
-  const { molecule } = useSelector((store) => store.molecule);
-  const { pressure } = useSelector((store) => store.pressure);
-  const { resolution } = useSelector((store) => store.resolution);
-  const { scan } = useSelector((store) => store.scan);
-  const { source } = useSelector((store) => store.source);
-  const { minWave, maxWave } = useSelector((store) => store.wavenumber);
-  const { window } = useSelector((store) => store.window);
-  const { zeroFill } = useSelector((store) => store.zeroFill);
+  const {
+    beamsplitter,
+    detector,
+    molecule,
+    pressure,
+    resolution,
+    scan,
+    source,
+    waveMin,
+    waveMax,
+    window,
+    zeroFill,
+  } = useSelector((store) => store.parameter);
 
   return (
     <div className="App">
@@ -79,11 +82,11 @@ export default function App() {
           </tr>
           <tr>
             <td>Wavenumber min</td>
-            <td>{minWave}</td>
+            <td>{waveMin}</td>
           </tr>
           <tr>
             <td>Wavenumber min</td>
-            <td>{maxWave}</td>
+            <td>{waveMax}</td>
           </tr>
           <tr>
             <td>Pressure</td>

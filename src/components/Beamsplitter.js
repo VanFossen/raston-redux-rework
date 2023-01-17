@@ -6,11 +6,11 @@ import FormLabel from "@mui/material/FormLabel";
 
 // redux
 import { useDispatch, useSelector } from "react-redux";
-import { updateBeamsplitter } from "../features/beamsplitter/beamsplitterSlice";
+import { updateBeamsplitter } from "../features/parameter/parameterSlice";
 
 export default function Beamsplitter() {
   const dispatch = useDispatch();
-  const { beamsplitter } = useSelector((store) => store.beamsplitter);
+  const { beamsplitter } = useSelector((store) => store.parameter);
 
   const handleChange = (event, newAlignment) => {
     dispatch(updateBeamsplitter(newAlignment));

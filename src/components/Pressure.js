@@ -5,11 +5,11 @@ import InputAdornment from "@mui/material/InputAdornment";
 
 // redux
 import { useDispatch, useSelector } from "react-redux";
-import { updatePressure } from "../features/pressure/pressureSlice";
+import { updatePressure } from "../features/parameter/parameterSlice";
 
 export default function Pressure() {
   const dispatch = useDispatch();
-  const { pressure } = useSelector((store) => store.pressure);
+  const { pressure } = useSelector((store) => store.parameter);
 
   const handleTextChange = (event) => {
     dispatch(

@@ -10,11 +10,11 @@ import { zeroFills } from "../dictionaries/zeroFillDict";
 
 // redux
 import { useDispatch, useSelector } from "react-redux";
-import { updateZeroFill } from "../features/zeroFill/zeroFillSlice";
+import { updateZeroFill } from "../features/parameter/parameterSlice";
 
 export default function ZeroFill() {
   const dispatch = useDispatch();
-  const { zeroFill } = useSelector((store) => store.zeroFill);
+  const { zeroFill } = useSelector((store) => store.parameter);
 
   const handleChange = (event) => {
     dispatch(updateZeroFill(event.target.value));

@@ -7,11 +7,11 @@ import FormLabel from "@mui/material/FormLabel";
 
 // redux
 import { useDispatch, useSelector } from "react-redux";
-import { updateSource } from "../features/source/sourceSlice";
+import { updateSource } from "../features/parameter/parameterSlice";
 
 export default function Source() {
   const dispatch = useDispatch();
-  const { source } = useSelector((store) => store.source);
+  const { source } = useSelector((store) => store.parameter);
 
   const handleChange = (event) => {
     dispatch(updateSource(event.target.value));
@@ -23,7 +23,7 @@ export default function Source() {
       <RadioGroup
         row
         aria-labelledby="demo-radio-buttons-group-label"
-        defaultValue={source}
+        value={source}
         onChange={handleChange}
         name="radio-buttons-group"
       >

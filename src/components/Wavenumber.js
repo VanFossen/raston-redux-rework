@@ -8,7 +8,10 @@ import MuiInput from "@mui/material/Input";
 
 // redux
 import { useDispatch, useSelector } from "react-redux";
-import { updateMin, updateMax } from "../features/wavenumber/wavenumberSlice";
+import {
+  updateWaveMin,
+  updateWaveMax,
+} from "../features/parameter/parameterSlice";
 
 const Input = styled(MuiInput)`
   width: 52px;
@@ -16,34 +19,34 @@ const Input = styled(MuiInput)`
 
 export default function Wavenumber() {
   const dispatch = useDispatch();
-  const { minWave, maxWave } = useSelector((store) => store.wavenumber);
+  const { waveMin, waveMax } = useSelector((store) => store.parameter);
 
   const handleSliderChange = (event, newValue) => {
-    dispatch(updateMin(newValue[0]));
-    dispatch(updateMax(newValue[1]));
+    dispatch(updateWaveMin(newValue[0]));
+    dispatch(updateWaveMax(newValue[1]));
   };
 
   const handleInputChangeMin = (event) => {
     dispatch(
-      updateMin(event.target.value === "" ? "" : Number(event.target.value))
+      updateWaveMin(event.target.value === "" ? "" : Number(event.target.value))
     );
   };
 
   const handleInputChangeMax = (event) => {
     dispatch(
-      updateMax(event.target.value === "" ? "" : Number(event.target.value))
+      updateWaveMax(event.target.value === "" ? "" : Number(event.target.value))
     );
   };
 
   const handleBlur = () => {
-    if (minWave > maxWave) {
+    if (waveMin > waveMax) {
       return;
     }
-    if (minWave < 400) {
-      updateMin(400);
+    if (waveMin < 400) {
+      dispatch(updateWaveMin(400));
     }
-    if (maxWave > 12500) {
-      updateMax(12500);
+    if (waveMax > 12500) {
+      dispatch(updateWaveMax(12500));
     }
   };
 
@@ -56,7 +59,7 @@ export default function Wavenumber() {
         <Grid item>
           <Input
             sx={{ width: "75%" }}
-            value={minWave}
+            value={waveMin}
             size="small"
             onChange={handleInputChangeMin}
             onBlur={handleBlur}
@@ -72,8 +75,8 @@ export default function Wavenumber() {
         <Grid item xs>
           <Slider
             value={[
-              minWave === "" ? 400 : minWave,
-              maxWave === "" ? 12500 : maxWave,
+              waveMin === "" ? 400 : waveMin,
+              waveMax === "" ? 12500 : waveMax,
             ]}
             min={400}
             max={12500}
@@ -84,7 +87,7 @@ export default function Wavenumber() {
         <Grid item>
           <Input
             sx={{ width: "75%" }}
-            value={maxWave}
+            value={waveMax}
             size="small"
             onChange={handleInputChangeMax}
             onBlur={handleBlur}

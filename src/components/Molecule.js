@@ -10,11 +10,11 @@ import { molecules } from "../dictionaries/moleculeDict";
 
 // redux
 import { useDispatch, useSelector } from "react-redux";
-import { updateMolecule } from "../features/molecule/moleculeSlice";
+import { updateMolecule } from "../features/parameter/parameterSlice";
 
 export default function Molecule() {
   const dispatch = useDispatch();
-  const { molecule } = useSelector((store) => store.molecule);
+  const { molecule } = useSelector((store) => store.parameter);
 
   const handleChange = (event) => {
     dispatch(updateMolecule(event.target.value));

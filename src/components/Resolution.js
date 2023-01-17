@@ -10,11 +10,11 @@ import { resolutions } from "../dictionaries/resolutionDict";
 
 // redux
 import { useDispatch, useSelector } from "react-redux";
-import { updateResolution } from "../features/resolution/resolutionSlice";
+import { updateResolution } from "../features/parameter/parameterSlice";
 
 export default function Resolution() {
   const dispatch = useDispatch();
-  const { resolution } = useSelector((store) => store.resolution);
+  const { resolution } = useSelector((store) => store.parameter);
 
   const handleChange = (event) => {
     dispatch(updateResolution(event.target.value));

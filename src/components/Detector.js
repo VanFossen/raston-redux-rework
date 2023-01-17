@@ -8,7 +8,7 @@ import { CustomSwitch } from "./custom/CustomSwitch";
 
 // redux
 import { useDispatch } from "react-redux";
-import { updateDetector } from "../features/detector/detectorSlice";
+import { updateDetector } from "../features/parameter/parameterSlice";
 
 export default function Detector() {
   const dispatch = useDispatch();

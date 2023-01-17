@@ -9,7 +9,7 @@ import ShowChartIcon from "@mui/icons-material/ShowChart";
 
 // redux
 import { useDispatch, useSelector } from "react-redux";
-import { updateScan } from "../features/scan/scanSlice";
+import { updateScan } from "../features/parameter/parameterSlice";
 
 const Input = styled(MuiInput)`
   width: 42px;
@@ -17,7 +17,7 @@ const Input = styled(MuiInput)`
 
 export default function Scan() {
   const dispatch = useDispatch();
-  const { scan } = useSelector((store) => store.scan);
+  const { scan } = useSelector((store) => store.parameter);
 
   const handleSliderChange = (event, newValue) => {
     dispatch(updateScan(newValue));
